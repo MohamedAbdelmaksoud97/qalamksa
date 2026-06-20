@@ -4,7 +4,7 @@ import { OrderAccessForm } from "./order-access-form";
 export default function Home() {
   return (
     <main className="min-h-dvh bg-[#f5f9fa] text-[#3d4a50]" dir="rtl">
-      <section className="mx-auto flex min-h-dvh w-full max-w-[445px] flex-col bg-[#f5f9fa] shadow-2xl lg:max-w-none lg:shadow-none">
+      <section className="flex min-h-dvh w-full flex-col bg-[#f5f9fa]">
         <header className="flex h-44 items-center justify-center bg-[#BBE3E7] px-6 lg:h-36">
           <BrandLink
             imageClassName="h-32 w-32 lg:h-[8.5rem] lg:w-[8.5rem]"
