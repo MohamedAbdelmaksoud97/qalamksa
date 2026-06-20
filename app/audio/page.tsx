@@ -6,11 +6,11 @@ export default function AudioPage() {
   return (
     <main className="min-h-dvh bg-[#f6fbfb] text-[#123133]" dir="rtl">
       <section className="mx-auto w-full max-w-5xl px-5 py-8 sm:px-8">
-        <header className="relative mb-8 flex min-h-24 items-center justify-center">
+        <header className="relative mb-8 flex min-h-28 items-center justify-center rounded-2xl bg-[#b7dfe1] px-16">
           <Link
             href="/"
-            aria-label="..العودة إلى صفحة رقم الطلب"
-            className="absolute right-0 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d7eff0] bg-white text-[#173b3d] shadow-sm transition hover:border-[#8fcfd3] hover:bg-[#fbfefe] focus:outline-none focus:ring-4 focus:ring-[#b7dfe1]/50"
+            aria-label="العودة إلى صفحة رقم الطلب"
+            className="absolute right-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d7eff0] bg-white text-[#173b3d] shadow-sm transition hover:border-[#8fcfd3] hover:bg-[#fbfefe] focus:outline-none focus:ring-4 focus:ring-[#ffffff]/60"
           >
             <svg
               aria-hidden="true"
@@ -27,14 +27,16 @@ export default function AudioPage() {
             </svg>
           </Link>
 
-          <BrandLink />
+          <BrandLink imageClassName="h-24 w-24" size={96} />
         </header>
 
         <div className="mb-8 flex flex-col gap-2 border-b border-[#d7eff0] pb-6 text-center">
           <p className="text-sm font-semibold text-[#37676a]">
             مكتبة الصوت الخاصة
           </p>
-          <h1 className="text-3xl font-bold">اختر المنتج ثم الملف الصوتي</h1>
+          <h1 className="text-3xl font-bold">
+            اختر المنتج ثم الملف الصوتي
+          </h1>
         </div>
 
         <AudioLibrary />

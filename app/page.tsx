@@ -3,32 +3,38 @@ import { OrderAccessForm } from "./order-access-form";
 
 export default function Home() {
   return (
-    <main className="min-h-dvh bg-[#f6fbfb] text-[#123133]" dir="rtl">
-      <section className="mx-auto flex min-h-dvh w-full max-w-5xl flex-col px-5 py-8 sm:px-8">
-        <header className="flex justify-center">
-          <BrandLink />
+    <main className="min-h-dvh bg-[#f5f9fa] text-[#3d4a50]" dir="rtl">
+      <section className="mx-auto flex min-h-dvh w-full max-w-[445px] flex-col bg-[#f5f9fa] shadow-2xl lg:max-w-none lg:shadow-none">
+        <header className="flex h-44 items-center justify-center bg-[#BBE3E7] px-6 lg:h-36">
+          <BrandLink
+            imageClassName="h-32 w-32 lg:h-[8.5rem] lg:w-[8.5rem]"
+            size={136}
+          />
         </header>
 
-        <div className="grid flex-1 gap-10 py-10 lg:grid-cols-[1fr_420px] lg:items-center">
-          <div className="space-y-6 text-center lg:text-right">
-            <p className="mx-auto w-fit border-b-4 border-[#b7dfe1] px-2 pb-2 text-sm font-semibold text-[#37676a] lg:mx-0 lg:border-b-0 lg:border-r-4 lg:pb-0 lg:pr-3">
-              أهلا بك في قلم
+        <div className="flex flex-1 flex-col px-5 pb-8 pt-10 text-center sm:px-6 lg:mx-auto lg:grid lg:w-full lg:max-w-6xl lg:grid-cols-[minmax(0,1fr)_420px] lg:items-center lg:gap-16 lg:px-10 lg:py-20">
+          <section className="space-y-5 lg:text-right">
+            <h1 className="text-[22px] font-bold leading-9 text-[#37464d] lg:max-w-2xl lg:text-5xl lg:leading-[1.25]">
+              أهلا بك في المكتبة الصوتية من قلم
+            </h1>
+            <p className="mx-auto max-w-[340px] text-[17px] font-medium leading-8 text-[#66757b] lg:mx-0 lg:max-w-xl lg:text-xl lg:leading-9">
+              مساحتك الصوتية الخاصة لتفعيل أدواتك التعليمية وتحقيق أقصى استفادة
+              منها.
             </p>
-            <div className="space-y-4">
-              <h1 className="mx-auto max-w-2xl text-4xl font-bold leading-tight text-[#102b2d] sm:text-5xl lg:mx-0">
-                رحلتك الصوتية جاهزة
-              </h1>
-              <p className="mx-auto max-w-xl text-lg leading-8 text-[#496c6e] lg:mx-0">
-                أدخل رقم طلبك لفتح مكتبة قلم الخاصة بك. سنعرض لك المنتجات
-                المتاحة ونجهز روابط استماع آمنة تعمل لمدة محدودة.
-              </p>
-            </div>
-            <p className="mx-auto max-w-lg rounded-lg border border-[#d7eff0] bg-white/70 px-4 py-3 text-sm leading-6 text-[#496c6e] lg:mx-0">
-              رقم الطلب موجود في رسالة تأكيد الشراء من زد.
+            <p className="mx-auto mt-14 rounded-lg border border-[#c4e5e9] bg-[#eef8fa] px-5 py-4 text-[16px] leading-7 text-[#5f6d73] lg:mx-0 lg:mt-8 lg:max-w-xl">
+              أدخل رقم الطلب المرسل لك عبر الواتساب أو الإيميل.
             </p>
+          </section>
+
+          <div className="mt-8 lg:mt-0">
+            <OrderAccessForm />
           </div>
 
-          <OrderAccessForm />
+          <footer className="mt-4 text-[12px] leading-5 text-[#6c787d] lg:col-span-2 lg:mt-14 lg:text-center">
+            جميع حقوق الطبع والنشر للملفات الصوتية محفوظة لقلم التعليمية © ٢٠٢٦
+            <br />
+            يمنع إعادة النشر أو التوزيع لضمان حقوق وأمان التجربة.
+          </footer>
         </div>
       </section>
     </main>

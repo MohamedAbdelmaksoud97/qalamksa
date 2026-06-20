@@ -1,6 +1,14 @@
 import Image from "next/image";
 
-export function BrandLink() {
+type BrandLinkProps = {
+  imageClassName?: string;
+  size?: number;
+};
+
+export function BrandLink({
+  imageClassName = "h-24 w-24",
+  size = 96,
+}: BrandLinkProps) {
   return (
     <a
       href="https://qalamksa.com/"
@@ -10,10 +18,10 @@ export function BrandLink() {
       <Image
         src="/logo.png"
         alt="Qalam"
-        width={96}
-        height={96}
+        width={size}
+        height={size}
         priority
-        className="h-24 w-24 rounded-md object-contain"
+        className={`${imageClassName} object-contain`}
       />
     </a>
   );
