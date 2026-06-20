@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import {
   AUDIO_ACCESS_COOKIE,
+  AUDIO_ACCESS_MAX_AGE_SECONDS,
   isValidProductKey,
   readAudioAccessToken,
 } from "@/utils/audio-access";
@@ -64,7 +65,7 @@ export async function GET(
   const { data: signedUrlData, error: signedUrlError } =
     await supabase.storage
       .from("qalamksa")
-      .createSignedUrl(audioFile.storage_path, 60 * 10);
+      .createSignedUrl(audioFile.storage_path, AUDIO_ACCESS_MAX_AGE_SECONDS);
 
   if (signedUrlError) {
     return NextResponse.json(

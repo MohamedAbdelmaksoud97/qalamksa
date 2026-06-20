@@ -3,7 +3,7 @@ import "server-only";
 import { createHmac, timingSafeEqual } from "crypto";
 
 export const AUDIO_ACCESS_COOKIE = "audio_access";
-export const AUDIO_ACCESS_MAX_AGE_SECONDS = 60 * 60 * 3;
+export const AUDIO_ACCESS_MAX_AGE_SECONDS = 60 * 60 * 10;
 
 const getSecret = () => {
   const secret = process.env.APP_SCRIPT_SECRET;
