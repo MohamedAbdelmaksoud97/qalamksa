@@ -111,12 +111,18 @@ export function AudioLibrary() {
 
         {audioUrl ? (
           <div className="w-full rounded-xl border border-[#c4e5e9] bg-white px-4 py-4 shadow-sm sm:px-5">
-            <p className="mb-3 text-right text-sm font-semibold leading-6 text-[#5d6b70]">
-              {isPreparing
-                ? "جاري تجهيز رابط آمن للتشغيل..."
-                : "رابط التشغيل صالح لمدة 10 دقائق."}
-            </p>
-            <audio className="w-full" controls src={audioUrl} autoPlay />
+            {isPreparing ? (
+              <p className="mb-3 text-right text-sm font-semibold leading-6 text-[#5d6b70]">
+                جاري تجهيز الملف الصوتي...
+              </p>
+            ) : null}
+            <audio
+              className="w-full"
+              controls
+              controlsList="nodownload"
+              src={audioUrl}
+              autoPlay
+            />
           </div>
         ) : null}
       </section>
