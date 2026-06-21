@@ -5,11 +5,8 @@ export default function Home() {
   return (
     <main className="min-h-dvh bg-[#f5f9fa] text-[#3d4a50]" dir="rtl">
       <section className="flex min-h-dvh w-full flex-col bg-[#f5f9fa]">
-        <header className="flex h-44 items-center justify-center bg-[#BBE3E7] px-6 lg:h-36">
-          <BrandLink
-            imageClassName="h-32 w-32 lg:h-[8.5rem] lg:w-[8.5rem]"
-            size={136}
-          />
+        <header className="flex h-48 items-center justify-center bg-[#b6d9dd] px-6 lg:h-40">
+          <BrandLink imageClassName="h-40 w-40 lg:h-40 lg:w-40" size={160} />
         </header>
 
         <div className="flex flex-1 flex-col px-5 pb-8 pt-10 text-center sm:px-6 lg:mx-auto lg:grid lg:w-full lg:max-w-6xl lg:grid-cols-[minmax(0,1fr)_420px] lg:items-center lg:gap-16 lg:px-10 lg:py-20">

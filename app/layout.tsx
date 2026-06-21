@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/tab-logo.png",
+    shortcut: "/tab-logo.png",
+    apple: "/tab-logo.png",
   },
   openGraph: {
     title: "الوصول الصوتي الخاص | قلم",

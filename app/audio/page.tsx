@@ -8,7 +8,7 @@ export default function AudioPage() {
       className="min-h-dvh overflow-x-hidden bg-[#f5f9fa] text-[#3d4a50]"
       dir="rtl"
     >
-      <header className="relative flex h-24 items-center justify-center bg-[#bbe3e7] px-14 shadow-md shadow-[#9bbec1]/25 sm:h-32 lg:h-36">
+      <header className="relative flex h-28 items-center justify-center bg-[#b6d9dd] px-14 shadow-md shadow-[#9bbec1]/25 sm:h-36 lg:h-40">
         <Link
           href="/"
           aria-label="العودة إلى صفحة رقم الطلب"
@@ -30,8 +30,8 @@ export default function AudioPage() {
         </Link>
 
         <BrandLink
-          imageClassName="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32"
-          size={128}
+          imageClassName="h-40 w-40 sm:h-32 sm:w-32 lg:h-36 lg:w-36"
+          size={144}
         />
       </header>
 
