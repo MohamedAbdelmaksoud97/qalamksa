@@ -29,10 +29,7 @@ export default function AudioPage() {
           </svg>
         </Link>
 
-        <BrandLink
-          imageClassName="h-40 w-40 sm:h-32 sm:w-32 lg:h-36 lg:w-36"
-          size={144}
-        />
+        <BrandLink variant="audio" />
       </header>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-14">

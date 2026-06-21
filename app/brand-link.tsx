@@ -1,14 +1,23 @@
 import Image from "next/image";
 
+const logoVariants = {
+  main: {
+    imageClassName: "h-40 w-40 lg:h-40 lg:w-40",
+    size: 160,
+  },
+  audio: {
+    imageClassName: "h-40 w-40 sm:h-32 sm:w-32 lg:h-36 lg:w-36",
+    size: 144,
+  },
+} as const;
+
 type BrandLinkProps = {
-  imageClassName?: string;
-  size?: number;
+  variant?: keyof typeof logoVariants;
 };
 
-export function BrandLink({
-  imageClassName = "h-24 w-24",
-  size = 96,
-}: BrandLinkProps) {
+export function BrandLink({ variant = "main" }: BrandLinkProps) {
+  const { imageClassName, size } = logoVariants[variant];
+
   return (
     <a
       href="https://qalamksa.com/"
