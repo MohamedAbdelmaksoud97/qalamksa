@@ -28,7 +28,7 @@ export default function Home() {
           </div>
 
           <footer className="mt-4 text-[12px] leading-5 text-[#6c787d] lg:col-span-2 lg:mt-14 lg:text-center">
-            جميع حقوق الطبع والنشر للملفات الصوتية محفوظة لقلم التعليمية © ٢٠٢٦
+            جميع حقوق الطبع والنشر للملفات الصوتية محفوظة لقلم العالمية © ٢٠٢٦
             <br />
             يمنع إعادة النشر أو التوزيع لضمان حقوق وأمان التجربة.
           </footer>
