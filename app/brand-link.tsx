@@ -6,7 +6,7 @@ const logoVariants = {
     size: 160,
   },
   audio: {
-    imageClassName: "h-40 w-40 sm:h-32 sm:w-32 lg:h-36 lg:w-36",
+    imageClassName: "h-40 w-40 sm:h-32 sm:w-32 lg:h-36 lg:w-40",
     size: 144,
   },
 } as const;
