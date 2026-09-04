@@ -12,7 +12,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://qalamksa.com/"),
   title: "الوصول الصوتي الخاص | قلم",
-  description: "نظام تحقق آمن للوصول إلى الملفات الصوتية  الخاصة.",
+  description: "نظام تحقق آمن للوصول إلى الملفات الصوتية الخاصة.",
   alternates: {
     canonical: "/",
   },
