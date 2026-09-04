@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BrandLink } from "../brand-link";
 import { AudioLibrary } from "./audio-library";
+import { ORDER_LOGIN_ENABLED } from "@/utils/order-login";
 
 export default function AudioPage() {
   return (
@@ -9,25 +10,27 @@ export default function AudioPage() {
       dir="rtl"
     >
       <header className="relative flex h-28 items-center justify-center bg-[#b6d9dd] px-14 shadow-md shadow-[#9bbec1]/25 sm:h-36 lg:h-40">
-        <Link
-          href="/"
-          aria-label="العودة إلى صفحة رقم الطلب"
-          className="absolute right-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/70 bg-white text-[#173b3d] shadow-sm transition hover:bg-[#f6fbfb] focus:outline-none focus:ring-4 focus:ring-white/60 sm:right-5 sm:h-11 sm:w-11"
-        >
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2.25"
+        {ORDER_LOGIN_ENABLED ? (
+          <Link
+            href="/"
+            aria-label="العودة إلى صفحة رقم الطلب"
+            className="absolute right-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/70 bg-white text-[#173b3d] shadow-sm transition hover:bg-[#f6fbfb] focus:outline-none focus:ring-4 focus:ring-white/60 sm:right-5 sm:h-11 sm:w-11"
           >
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-          </svg>
-        </Link>
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2.25"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </Link>
+        ) : null}
 
         <BrandLink variant="audio" />
       </header>

@@ -6,6 +6,7 @@ import {
   isValidProductKey,
   readAudioAccessToken,
 } from "@/utils/audio-access";
+import { ORDER_LOGIN_ENABLED } from "@/utils/order-login";
 import { createAdminClient } from "@/utils/supabase/admin";
 
 export async function GET(
@@ -21,25 +22,28 @@ export async function GET(
     );
   }
 
-  const cookieStore = await cookies();
-  const access = readAudioAccessToken(
-    cookieStore.get(AUDIO_ACCESS_COOKIE)?.value,
-  );
-
-  if (!access) {
-    return NextResponse.json({ success: false }, { status: 401 });
-  }
-
   const supabase = createAdminClient();
-  const { data: order } = await supabase
-    .from("orders")
-    .select("order_id")
-    .eq("order_id", access.orderId)
-    .eq("is_active", true)
-    .maybeSingle();
 
-  if (!order) {
-    return NextResponse.json({ success: false }, { status: 401 });
+  if (ORDER_LOGIN_ENABLED) {
+    const cookieStore = await cookies();
+    const access = readAudioAccessToken(
+      cookieStore.get(AUDIO_ACCESS_COOKIE)?.value,
+    );
+
+    if (!access) {
+      return NextResponse.json({ success: false }, { status: 401 });
+    }
+
+    const { data: order } = await supabase
+      .from("orders")
+      .select("order_id")
+      .eq("order_id", access.orderId)
+      .eq("is_active", true)
+      .maybeSingle();
+
+    if (!order) {
+      return NextResponse.json({ success: false }, { status: 401 });
+    }
   }
 
   const { id } = await context.params;

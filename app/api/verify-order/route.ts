@@ -8,6 +8,7 @@ import {
   isValidOrderId,
 } from "@/utils/audio-access";
 import { createAdminClient } from "@/utils/supabase/admin";
+import { ORDER_LOGIN_ENABLED } from "@/utils/order-login";
 
 type VerifyOrderPayload = {
   order_id?: unknown;
@@ -27,6 +28,13 @@ const logAccess = async (orderId: string | null, success: boolean, request: Requ
 };
 
 export async function POST(request: Request) {
+  if (!ORDER_LOGIN_ENABLED) {
+    return NextResponse.json(
+      { success: false, error: "order_login_temporarily_disabled" },
+      { status: 503 },
+    );
+  }
+
   const payload = (await request.json().catch(() => null)) as
     | VerifyOrderPayload
     | null;

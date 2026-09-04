@@ -1,7 +1,13 @@
+import { redirect } from "next/navigation";
 import { BrandLink } from "./brand-link";
 import { OrderAccessForm } from "./order-access-form";
+import { ORDER_LOGIN_ENABLED } from "@/utils/order-login";
 
 export default function Home() {
+  if (!ORDER_LOGIN_ENABLED) {
+    redirect("/audio");
+  }
+
   return (
     <main className="min-h-dvh bg-[#f5f9fa] text-[#3d4a50]" dir="rtl">
       <section className="flex min-h-dvh w-full flex-col bg-[#f5f9fa]">
